@@ -9,15 +9,21 @@
   & li {
     text-align: center;
     width: 30%;
-    padding: 0.4rem 0.6rem;
 
     background-color: var(--colorSecondary);
     border-radius: var(--borderRounded);
 
-    & i {
-      font-size: 200%;
+    & img {
+      width: 100%;
 
-      margin: 3vh 0;
+      mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 50%,
+        rgba(0, 0, 0, 0)
+      );
+
+      border: .15rem solid var(--colorPrimary);
+      border-radius: var(--borderRounded) var(--borderRounded) 0 0;
     }
   }
 }
