@@ -14,7 +14,7 @@
     </div>
   </div>
   <div id="chatBody">
-    <div id="chatMessage">
+    <div class="chatMessage" *ngIf="!formSubmitted">
       <p>Olá!</p>
       <p>Meu nome é Ana, é um prazer te atender!</p>
       <p>
@@ -26,8 +26,15 @@
         nosso <b>advogado especializado</b> pelo WhatsApp.
       </p>
     </div>
+    <div class="chatMessage" *ngIf="formSubmitted" id="customMarginBottom">
+      <p>Pronto!</p>
+      <p>Tudo certo!</p>
+      <p>
+        Caso não tenha sido redirecionado para o WhatsApp, <b>clique no botão abaixo</b>.
+      </p>
+    </div>
     <div class="d-flex flex-column justify-content-end">
-      <form>
+      <form *ngIf="!formSubmitted">
         <div>
           <label for="name">Nome:</label>
           <input type="text" id="name" name="name" [(ngModel)]="name" />
@@ -58,7 +65,8 @@
           </select>
         </div>
       </form>
-      <button (click)="submitToSheet()" id="whatsappRedirect">Iniciar conversa</button>
+      <button (click)="submitToSheet()" class="whatsappRedirect" *ngIf="!formSubmitted">Iniciar conversa</button>
+      <a [href]="linkWithCustomMessage" class="whatsappRedirect" *ngIf="formSubmitted">WhatsApp</a>
     </div>
   </div>
 </div>

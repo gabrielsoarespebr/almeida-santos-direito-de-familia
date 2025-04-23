@@ -36,7 +36,7 @@
   padding-bottom: 1rem;
 }
 
-#chatMessage {
+.chatMessage {
   margin: 0 7rem .7rem .7rem;
   padding: .7rem;
 
@@ -45,7 +45,7 @@
   background-color: #FAFFFE;
 
   p {
-    margin-bottom: .3em;
+    margin-bottom: .3em !important;
   }
 }
 
@@ -71,7 +71,11 @@ form {
   }
 }
 
-#whatsappRedirect {
+#customMarginBottom {
+  margin-bottom: 40vh;
+}
+
+.whatsappRedirect {
   padding: .7rem;
 
   margin-left: auto;

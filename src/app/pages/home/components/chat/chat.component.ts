@@ -20,6 +20,7 @@ export class ChatComponent {
   referralSource: string = '';
 
   googleSheetsScriptUrl = environment.googleSheetsScriptUrl;
+  formSubmitted: boolean = false;
 
   get linkWithCustomMessage(): string {
     const msg = `- Nome: ${this.name}
@@ -58,6 +59,7 @@ Olá, tudo bem? Gostaria de obter mais informações sobre os serviços jurídic
       .then((res) => {
         window.open(this.linkWithCustomMessage, '_blank');
         console.log('Enviado com sucesso');
+        this.formSubmitted = !this.formSubmitted;
       })
       .catch((err) => {
         console.error('Erro ao enviar', err);
