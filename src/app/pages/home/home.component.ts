@@ -1,3 +1,4 @@
+import { ChatService } from './../../services/chat.service';
 import { Component } from '@angular/core';
 import { HeaderComponent } from './components/header/header.component';
 import { DividerComponent } from '../../shared/components/divider/divider.component';
@@ -24,4 +25,10 @@ import { ChatComponent } from './components/chat/chat.component';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  constructor(private chatService: ChatService) {}
+
+  showChat() {
+    this.chatService.showChat();
+  }
+}

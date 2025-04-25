@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import { BrazilStateEnum } from '../../../../shared/enums/BrazilStateEnum';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { environment } from '../../../../../environments/environment.prod';
+=======
+import { ChatService } from '../../../../services/chat.service';
+>>>>>>> fb11d82 (feat: showChat and hideChat)
 
 @Component({
   selector: 'app-chat',
@@ -20,7 +24,18 @@ export class ChatComponent {
   referralSource: string = '';
 
   googleSheetsScriptUrl = environment.googleSheetsScriptUrl;
+  isChatVisible: boolean = false;
   formSubmitted: boolean = false;
+
+  constructor(private chatService: ChatService) {}
+
+  ngOnInit() {
+    this.chatService.isVisible$.subscribe(visible => this.isChatVisible = visible)
+  }
+
+  hideChat() {
+    this.chatService.hideChat();
+  }
 
   get linkWithCustomMessage(): string {
     const msg = `- Nome: ${this.name}
