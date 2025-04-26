@@ -2,11 +2,7 @@ import { Component } from '@angular/core';
 import { BrazilStateEnum } from '../../../../shared/enums/BrazilStateEnum';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-<<<<<<< HEAD
-import { environment } from '../../../../../environments/environment.prod';
-=======
 import { ChatService } from '../../../../services/chat.service';
->>>>>>> fb11d82 (feat: showChat and hideChat)
 
 @Component({
   selector: 'app-chat',
@@ -23,7 +19,6 @@ export class ChatComponent {
   state: string = '';
   referralSource: string = '';
 
-  googleSheetsScriptUrl = environment.googleSheetsScriptUrl;
   isChatVisible: boolean = false;
   formSubmitted: boolean = false;
 
@@ -61,7 +56,7 @@ Olá, tudo bem? Gostaria de obter mais informações sobre os serviços jurídic
     };
 
     fetch(
-      this.googleSheetsScriptUrl,
+      'https://script.google.com/macros/s/AKfycby2Mo3D2YAQ7HmGXxHAgdBQObB1DIUZoaijO79b7I7KGVL4Yw0ZErVc8wNa0qsHhFRM/exec',
       {
         method: 'POST',
         mode: 'no-cors',

@@ -55,9 +55,6 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-            },
-            "environment": {
-              "NG_APP_GOOGLE_SHEETS_SCRIPT_URL": "@googleSheetsScriptUrl"
             }
           },
           "defaultConfiguration": "production"
